@@ -1,0 +1,60 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                             http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+    <display-name>EmployeeTimeTracking</display-name>
+
+    <!-- Login Servlet -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.emptrack.controller.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+         <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Time Entry Servlet -->
+    <servlet>
+        <servlet-name>TimeEntryServlet</servlet-name>
+        <servlet-class>com.emptrack.controller.TimeEntryServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TimeEntryServlet</servlet-name>
+        <url-pattern>/TimeEntryServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Register Servlet -->
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.emptrack.controller.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/RegisterServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+    <servlet-name>AdminServlet</servlet-name>
+    <servlet-class>com.emptrack.controller.AdminServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>AdminServlet</servlet-name>
+    <url-pattern>/admin.jsp</url-pattern>
+</servlet-mapping>
+    
+
+    <!-- Error Page -->
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/error.jsp</location>
+    </error-page>
+
+    <!-- Default Welcome File -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>
